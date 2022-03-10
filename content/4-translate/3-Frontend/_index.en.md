@@ -12,7 +12,7 @@ In this section, you will copy the new translation file into the front-end sourc
 1. In the Cloud9 terminal, execute this command to copy the new translation file into the front-end source code:
 
 ```
-cp ~/environment/theme-park-backend/4-translate/local-app/translations.json ~/environment/theme-park-frontend/src/languages/
+cp ~/environment/theme-park-backend/codes/4-translate/local-app/translations.json ~/environment/theme-park-frontend/src/languages/
 ```
 ## Push to CodeCommit and deploy via Amplify
 

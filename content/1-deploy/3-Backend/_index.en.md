@@ -57,7 +57,7 @@ This has now created the S3 deployment bucket.
 
 4. Change directory:
 ```
-cd ~/environment/theme-park-backend/1-app-deploy/ride-controller/
+cd ~/environment/theme-park-backend/codes/1-app-deploy/ride-controller/
 ```
 5. Use SAM CLI to deploy the first part of the infrastructure by running the following commands:
 ```
@@ -122,7 +122,7 @@ The SAM template created a DynamoDB table for the application. Next, you will fi
 
 1. From the Cloud9 console, navigate to the local-app directory in **1-app-deploy**:
 ```
-cd ~/environment/theme-park-backend/1-app-deploy/local-app/
+cd ~/environment/theme-park-backend/codes/1-app-deploy/local-app/
 ```
 2. Install the NPM packages needed:
 ```

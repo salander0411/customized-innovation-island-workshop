@@ -74,7 +74,7 @@ Lambda functions that use arm64 architecture (AWS Graviton2 processor) can achie
 
 ![Module 2 - SNS completed](../images/2-realtime-lambda3.png)
 
-Now it's your time to finish the codes. 
+**Now it's your time to finish the codes. **
 
 This Lambda function code should **read the latest message from the SNS topic, writes it to the DynamoDB table, and then pushes the message to the frontend application via an IoT topic**.
 
