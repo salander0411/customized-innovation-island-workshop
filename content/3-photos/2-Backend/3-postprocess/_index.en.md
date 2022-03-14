@@ -13,48 +13,25 @@ After you will test with the sample image, and then perform a test from the fron
 
 ## Creating the Lambda function
 
-### Step-by-step instructions ###
 
-1. Go to the Lambda console - from the AWS Management Console, select **Services** then select [**Lambda**](https://console.aws.amazon.com/lambda) under *Compute*. **Make sure your region is correct.**
+1.  **Create a function** that:  
+ - `theme-park-photos-postprocess` for *Function name* 
+ -  `Node.js 14.x` as *Runtime*. 
+ -  Choose the *Existing role* as the one that is beginning with *theme-park-backend-ThemeParkLambdaRole**. 
 
-2. Select **Create function**. Enter `theme-park-photos-postprocess` for *Function name* and ensure `Node.js 14.x` is selected under *Runtime*. 
-
-3. Open the *Change default execution role* section:
--  Select the *Use an existing role* radio button. 
-- Click the *Existing role* drop-down, and enter **ThemeParkLambdaRole** until the filter matches a single available role beginning with *theme-park-backend-ThemeParkLambdaRole**. 
-- Select this role.
-- Select **Create function**.
-
-![Module 3 - Create Function](../../images/3-photos-composite2.png)
-
-3. Select **+ Add trigger**:
+2. Select **+ Add trigger**:
    - In the *Trigger configuration* dropdown, select **S3**. 
    - In the Bucket dropdown, select the bucket name beginning with `theme-park-backend-finalbucket`. 
    - For *Event Type* select **All object create events** from the dropdown. 
    - Check the *Recursive invocation* acknowledgement, and select **Add**.
 
-![Module 3 - Add trigger](../../images/3-photos-composite3.png)
+3. Back in the Lambda function page, select the *Code* tab to view the *Code source* card.
 
-4. Back in the Lambda function page, select the *Code* tab to view the *Code source* card.
+4. Go back to your browser tab with Cloud9 running. If you need to re-launch Cloud9, from the AWS Management Console, select Services then select Cloud9 under Developer Tools. Make sure your region is correct.
 
-![Module 3 - Open code panel](../../images/3-photos-composite4.png)
+Copy the code from 3-postprocess/app.js onto the clipboard and paste into the index.js tab in the Lambda function, overwriting the existing content:
 
-5. Now please implement the codes. It should save the photo object information into the DynamoDB table and send a message to the IoT topic so the frontend application is notified. 
-
-   The dynamoDB scheme is listed below. The name of DynamoDB and iot endpoint could be found below.
-   ```
-                'partitionKey': 'user-photo',
-                'sortKey': new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
-                'objectKey': params.ObjectKey,
-                'URL': params.URL  
-
-   ```
-
-
-
-6. Select *Deploy* in the *Function Code* panel to save the changes and deploy the function.
-
-![Module 3 - Paste code](../../images/3-photos-composite5.png)
+5. Select *Deploy* in the *Function Code* panel to save the changes and deploy the function.
 
 ### Adding environment variables
 

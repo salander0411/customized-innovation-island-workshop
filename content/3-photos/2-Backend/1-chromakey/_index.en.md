@@ -45,24 +45,18 @@ After a few seconds, the JSON response in the terminal confirms the `LayerArn` a
 
 1. Go to the Lambda console - from the AWS Management Console, select **Services** then select [**Lambda**](https://console.aws.amazon.com/lambda) under *Compute*. **Make sure your region is correct.**
 
-2. Select **Create function**:
-- Enter `theme-park-photos-chromakey` for *Function name*.
-- Ensure `Python 3.7` is selected under *Runtime*.
-- For *Architecture*, select `x86_64`.
+2. Create a function that:
+-  `theme-park-photos-chromakey` as *Function name*.
+-  `Python 3.7` as  *Runtime*.
+-  `x86_64` as *Architecture*
+-   choose the existing role that is beginning with *theme-park-backend-ThemeParkLambdaRole**.
 
 {{% notice warning %}}
 Ensure you have selected `Python 3.7` under *Runtime* to avoid an error.
 {{% /notice %}}
 
-3. Open the *Change default execution role* section:
--  Select the *Use an existing role* radio button.
-- Click the *Existing role* drop-down, and enter **ThemeParkLambdaRole** until the filter matches a single available role beginning with *theme-park-backend-ThemeParkLambdaRole**.
-- Select this role.
-- Choose **Create function**.
 
-![Module 3 - Create Function](/images/3-photos-chroma1.png)
-
-4. In the *Function overview panel*, select **+ Add Trigger**:
+3. In the *Function overview panel*, select **+ Add Trigger**:
    - In the *Trigger configuration* dropdown, select **S3**.
    - In the Bucket dropdown, select the bucket name beginning with `theme-park-backend-uploadbucket`.
    - For *Event Type* select **All object create events** from the dropdown.
@@ -71,11 +65,11 @@ Ensure you have selected `Python 3.7` under *Runtime* to avoid an error.
 
 ![Module 3 - Add trigger](/images/3-photos-chroma7.png)
 
-5. Back on the Lambda function page, select the *Code* tab. Scroll down to the *Layers* card. Select **Add a layer**.
+4. Back on the Lambda function page, select the *Code* tab. Scroll down to the *Layers* card. Select **Add a layer**.
 
 ![Module 3 - Trigger added](/images/3-photos-chroma2.png)
 
-6. On the *Add layer* page:
+5. On the *Add layer* page:
   - Select the *Custom layers* radio button.
   - In the *Custom layers* dropdown, choose `python-opencv-37`.
   - In the *Version* dropdown, choose `1`.
@@ -83,15 +77,13 @@ Ensure you have selected `Python 3.7` under *Runtime* to avoid an error.
 
 ![Module 3 - Trigger added](/images/3-photos-add-layer.png)
 
-7. Back on the Lambda function page, select the *Code* tab to view the *Code source* card.
+6. Back on the Lambda function page, select the *Code* tab to view the *Code source* card.
 
-![Module 3 - Open code panel](/images/3-photos-chroma4.png)
-
-8. Copy the code from the file in Cloud9 by navigating to `3-photos/1-chromakey/app.py` onto the clipboard and paste into the `lambda_function.py` tab in the Lambda function:
+7. Copy the code from the file in Cloud9 by navigating to `3-photos/1-chromakey/app.py` onto the clipboard and paste into the `lambda_function.py` tab in the Lambda function:
 
 ![Module 3 - Paste code](/images/3-photos-chroma5.png)
 
-9. Select **Deploy** in the *Code source* card to save the changes.
+8. Select **Deploy** in the *Code source* card to save the changes.
 
 ### Adding environment variables
 
