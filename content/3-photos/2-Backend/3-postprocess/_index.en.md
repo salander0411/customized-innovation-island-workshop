@@ -19,10 +19,9 @@ After you will test with the sample image, and then perform a test from the fron
  -  `Node.js 14.x` as *Runtime*. 
  -  Choose the *Existing role* as the one that is beginning with *theme-park-backend-ThemeParkLambdaRole**. 
 
-2. Select **+ Add trigger**:
-   - In the *Trigger configuration* dropdown, select **S3**. 
-   - In the Bucket dropdown, select the bucket name beginning with `theme-park-backend-finalbucket`. 
-   - For *Event Type* select **All object create events** from the dropdown. 
+2.  **+ Add S3 as a trigger**:
+   - Select the bucket name beginning with `theme-park-backend-finalbucket`. 
+   - For *Event Type* select **All object create events**. 
    - Check the *Recursive invocation* acknowledgement, and select **Add**.
 
 3. Back in the Lambda function page, select the *Code* tab to view the *Code source* card.

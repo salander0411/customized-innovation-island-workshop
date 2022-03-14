@@ -63,8 +63,6 @@ Ensure you have selected `Python 3.7` under *Runtime* to avoid an error.
    - Read the *Recursive invocation* warning, and select the checkbox to confirm that you have read and understood the warning.
    - Choose **Add**.
 
-![Module 3 - Add trigger](/images/3-photos-chroma7.png)
-
 4. Back on the Lambda function page, select the *Code* tab. Scroll down to the *Layers* card. Select **Add a layer**.
 
 ![Module 3 - Trigger added](/images/3-photos-chroma2.png)
